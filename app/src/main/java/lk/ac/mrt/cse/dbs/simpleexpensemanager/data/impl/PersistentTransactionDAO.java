@@ -62,6 +62,7 @@ public class PersistentTransactionDAO implements TransactionDAO {
                 columns, null, null, null, null, null);
         while (cursor.moveToNext()) {
             String tempDate0 = cursor.getString(cursor.getColumnIndex(DATE));
+
             @SuppressLint("SimpleDateFormat") Date tempDate1 = new SimpleDateFormat("dd-MM-yyyy").parse(tempDate0);
 
             String accountNo = cursor.getString(cursor.getColumnIndex(ACCOUNT_NO));
