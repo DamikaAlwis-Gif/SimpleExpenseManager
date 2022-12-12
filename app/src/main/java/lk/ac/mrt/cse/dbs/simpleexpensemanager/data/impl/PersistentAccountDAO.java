@@ -33,6 +33,7 @@ public class PersistentAccountDAO implements AccountDAO {
 
     @Override
     public List<String> getAccountNumbersList() {
+
         database = manager.getReadableDatabase();
         String[] columns = {ACCOUNT_NO};
 
@@ -84,7 +85,7 @@ public class PersistentAccountDAO implements AccountDAO {
         String condition = ACCOUNT_NO + " = ?";
 
         String[] whereArgs = {accountNo};
-
+        // generating queary
         Cursor cursor = database.query(ACCOUNT_TABLE, selection, condition, whereArgs, null, null, null);
         if (cursor == null) {
 
